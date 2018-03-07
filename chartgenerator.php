@@ -6,7 +6,7 @@
         Highcharts.chart('".$containername."', {
     
             title: {
-                text: 'Solar Employment Growth by Sector, 2010-2016'
+                text: '".$data["chartTitle"]."'
             },
         
             subtitle: {
@@ -15,7 +15,7 @@
         
             yAxis: {
                 title: {
-                    text: 'Number of Employees'
+                    text: '".$data["yLabel"]."'
                 }
             },
             legend: {
@@ -24,18 +24,14 @@
                 verticalAlign: 'middle'
             },
         
-            plotOptions: {
-                series: {
-                    label: {
-                        connectorAllowed: false
-                    },
-                    pointStart: 2010
-                }
+            xAxis: {
+                categories: ".$data["waktu"].",
+                rotation: [45]
             },
         
             series: [{
-                name: 'Installation',
-                data: [" . implode(',',$data) . "]
+                name: '".$data["varLabel"]."',
+                data: ".$data["tegangan"]."
             }],
         
             responsive: {

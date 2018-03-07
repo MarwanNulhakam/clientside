@@ -14,7 +14,7 @@
             #chartcontainer {
                 min-width: 400px;
                 max-width: 800px;
-                height: 220px;
+                height: 400px;
                 margin: 0 auto;
            }
            
@@ -25,31 +25,6 @@
                 margin: 0 auto
            }
            
-           #chartcontainer3 {
-                min-width: 400px;
-                max-width: 800px;
-                height: 220px;
-                margin: 0 auto
-           }
-           
-           #chartcontainer4 {
-                min-width: 400px;
-                max-width: 800px;
-                height: 220px;
-                margin: 0 auto
-           }
-           #chartcontainer5 {
-                min-width: 400px;
-                max-width: 800px;
-                height: 220px;
-                margin: 0 auto
-           }
-           #chartcontainer6 {
-                min-width: 400px;
-                max-width: 800px;
-                height: 220px;
-                margin: 0 auto
-           }
         </style>        
     </head>
     <body>
@@ -61,14 +36,36 @@
             include 'chartgenerator.php';
             include 'actualgraphicgenerator.php';
             include 'dbmodel.php';
-            $column = "tegangan";
-            $tablename = "merit";
-            $data = doQueryAsArray(generateQuery($column,$tablename,1));
-        ?>
-        <div id="dynamicContainer"></div>
+            ?>
+        <!--<div id="chartcontainer"></div>-->
+        <!---->
+        <!--<?php-->
+        <!--    $xseries = "waktu";-->
+        <!--    $yseries = "tegangan";-->
+        <!--    $tablename = "merit";-->
+        <!--    $tegangan = doQueryAsArray(generateQuery($yseries,$tablename,1),$yseries);-->
+        <!--    $waktu = doQueryAsArray(generateQuery($xseries,$tablename,1),$xseries);-->
+        <!--    -->
+        <!--    chartgenerator("chartcontainer",-->
+        <!--                array(-->
+        <!--                    "chartTitle" =>"Monitor Tegangan",-->
+        <!--                    "varLabel" => "tegangan (V)",-->
+        <!--                    "yLabel" => "Tegangan per Menit",-->
+        <!--                    "tegangan" => str_replace("\"","",json_encode($tegangan)),-->
+        <!--                    "waktu" => json_encode($waktu)-->
+        <!--                )-->
+        <!--    );-->
+        <!--?>-->
+        
         <?php
-            //chartgenerator("chartcontainer",$data);
-            dynamicGraph("dynamicContainer");
+        echo "<div id=\"dynamicContainer\"></div>";
+            $properties1 = array(
+                "chartTitle" =>"Monitor Tegangan",
+                "varLabel" => "tegangan (V)",
+                "date" => "2018-03-01",
+                "variable" => "tegangan"
+            );
+            dynamicGraph("dynamicContainer",$properties1);
         ?>
         
     </body>

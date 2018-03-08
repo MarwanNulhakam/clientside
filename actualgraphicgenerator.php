@@ -20,13 +20,11 @@ echo "
                     setInterval(function () {
                             var ajax = new XMLHttpRequest();
                             ajax.onload = function(){
-                                var w = this.responseText.split(\",\"),
-                                    x = w[0],
-                                    y = w[1] * 1;
+                                var x = (new Date()).getTime(), // current time
+                                    y = this.responseText * 1;
                                 series.addPoint([x, y], true, true);
-                                
-                            }
-                            ajax.open('get','chartdata.php?id=index',true);
+                              }
+                            ajax.open('get','chartdata.php',true);
                             ajax.send();
                             
                             
@@ -64,6 +62,15 @@ echo "
             name: '".$properties["varLabel"]."',
             data: (function () {
                 // generate an array of random data
+                
+                var ajax = new XMLHttpRequest();
+                var y;
+                ajax.onload = function(){
+                    y = this.responseText * 1;
+                }
+                ajax.open('get','chartdata.php',true);
+                ajax.send();
+                            
                 var data = [],
                     time = (new Date()).getTime(),
                     i;

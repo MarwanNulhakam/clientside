@@ -20,6 +20,7 @@
         $conn = connect();
         $result = $conn -> query($query);
         $i=0;
+        $array[0] = 0;
         while($data = $result -> fetch_array()){
             $array[$i] = $data[$index];
             $i++;

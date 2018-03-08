@@ -1,16 +1,15 @@
 <?php
   function chartgenerator($containername,$data){
-    
     echo '<script type="text/javascript">';
     echo "
-        Highcharts.chart('".$containername."', {
-    
+        $(function () {
+            var chart = new Highcharts.chart('".$containername."', {    
             title: {
                 text: '".$data["chartTitle"]."'
             },
         
             subtitle: {
-                text: 'Source: thesolarfoundation.com'
+                text: []
             },
         
             yAxis: {
@@ -31,7 +30,7 @@
         
             series: [{
                 name: '".$data["varLabel"]."',
-                data: ".$data["tegangan"]."
+                data: ".$data["series"]."
             }],
         
             responsive: {
@@ -48,8 +47,9 @@
                     }
                 }]
             }
-        
         });
+    });
+        
       </script>";
     }
 ?>

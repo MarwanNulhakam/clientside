@@ -1,12 +1,6 @@
 <?php
     include 'dbmodel.php';
     
-    if(isset($_GET["id"])){
-        $id = $_GET["id"];
-    }else{
-        $id = 1;
-    }
-    
     if(isset($_GET["date"])){
         $date = $_GET["date"];
     }else{
@@ -19,7 +13,7 @@
         $variable = "tegangan";
     }
     
-    $results = doQueryAsArray(generateQuery($variable,"merit","ID = '".$id."'"),$variable);
-    $results2 = doQueryAsArray(generateQuery("waktu","merit","ID = '".$id."'"),"waktu");
-    echo $results[0].",".$results2[0];
+    $results = doQueryAsArray(generateQuery($variable,"merit","tanggal = '".$date."'"),$variable);
+    //$results2 = doQueryAsArray(generateQuery("waktu","merit","tanggal = '".$date."'"),"waktu");
+    echo json_encode($results);
 ?>

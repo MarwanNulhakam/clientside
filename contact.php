@@ -26,14 +26,16 @@ $(function() {
 
 </head>
 <body>
-
+<?php
+    include "callpower.php";
+?>
 <div id="tooplate_wrapper">
 
 	<div id="tooplate_header">
         <div id="site_title"><h1><a href="#">The Block</a></h1></div>
         <div id="tooplate_menu">
             <ul>
-                <li><a href="index.html" class="current">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.php">Total Daya</a></li>
                 <li><a href="blog.php">Grafik Daya </a></li>
                 <li><a href="gallery.php">Grafik V/A</a></li>
@@ -48,52 +50,42 @@ $(function() {
     </div> <!-- end of middle -->
     
     <div id="tooplate_content"><span class="content_top"></span>
-    	<div class="box_w330 float_l">
-            <div id="contact_form">
+    	
+            <?php
+                $containername = "con1";
+                $chartprop = array(
+                    "chartTitle" =>"Akumulasi Daya Bulanan",
+                    "varLabel" => "Daya (VA)",
+                    "yLabel" => "Total Daya",
+                    "xseries" => "Bulan",
+                    "yseries" => "daya",
+                    "tablename" => "merit", 
+                    "date" => ""
+                );
+                accPowerchart($containername,$chartprop);
+            ?> 
         
-                <h5>Contact Form</h5>
-                
-					<form method="post" name="contact" action="#">
-					
-						<label for="author">Name:</label> <input type="text" id="author" name="author" class="required input_field" />
-						<div class="cleaner h10"></div>
-													
-						<label for="email">Email:</label> <input type="text" maxlength="40" id="email" class="input_field" name="email" />
-						<div class="cleaner h10"></div>
-											
-						<label for="subject">Subject:</label> <input type="text" class="validate-subject required input_field" name="subject" id="subject"/>				               
-						<div class="cleaner h10"></div>
-							
-						<label for="text">Message:</label> <textarea id="text" name="text" rows="0" cols="0" class="required"></textarea>
-						<div class="cleaner h10"></div>				
-												
-						<input type="submit" value="Send" id="submit" name="submit" class="submit_btn float_l" />
-						<input type="reset" value="Reset" id="reset" name="reset" class="submit_btn float_r" />
-						
-					</form>
-
-            </div> 
-        </div>
+        
             
-        <div class="box_w330 float_r">
-            <h5>Location</h5>
-            <div id="map">
-            	<div class="image_wrapper"><span></span>
-                    <a href="images/map_big.jpg" title="Company Map">
-                        <img width="300" height="200" src="images/map_thumb.jpg" alt="Map" />
-                    </a>
-                </div>
-            </div>                
-            <div class="cleaner h30"></div>
-            
-            <h5>Address</h5>
-            <h6>Company Name</h6>
-            990-880 Ut cursus condimentum, <br />
-            Donec tristique sapien, 10110<br />
-            Vitae malesuada, diam a mollis tempor<br /><br />
-			<b>Phone:</b> 010-064-2500 <br />
-            <b>Email:</b> <a href="mailto:info@company.com">info@company.com</a> 
-        </div>    	
+<!--        <div class="box_w330 float_r">-->
+<!--            <h5>Location</h5>-->
+<!--            <div id="map">-->
+<!--            	<div class="image_wrapper"><span></span>-->
+<!--                    <a href="images/map_big.jpg" title="Company Map">-->
+<!--                        <img width="300" height="200" src="images/map_thumb.jpg" alt="Map" />-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>                -->
+<!--            <div class="cleaner h30"></div>-->
+<!--            -->
+<!--            <h5>Address</h5>-->
+<!--            <h6>Company Name</h6>-->
+<!--            990-880 Ut cursus condimentum, <br />-->
+<!--            Donec tristique sapien, 10110<br />-->
+<!--            Vitae malesuada, diam a mollis tempor<br /><br />-->
+<!--			<b>Phone:</b> 010-064-2500 <br />-->
+<!--            <b>Email:</b> <a href="mailto:info@company.com">info@company.com</a> -->
+<!--        </div>    	-->
         
         <div class="cleaner"></div>
     </div> <!-- end of content -->

@@ -16,6 +16,25 @@
         return "SELECT ".$column." FROM ".$tablename." WHERE ".$condition;
     }
     
+    function insert($param,$value){
+        $conn = connect();
+        
+        if(count(explode($param , ",")) != count(explode($value, ","))){
+            disconnect($conn);
+            return "0";
+        }
+        $statement = "INSERT INTO `merit` (".$param.") VALUES (".$value.")";
+//        echo $statement;
+
+        if($conn->query($statement) === TRUE){
+            disconnect($conn);
+            return "1";
+        }else{
+            disconnect($conn);
+            return "0";
+        }
+    }
+
     function doQueryAsArray($query,$index){
         $conn = connect();
         $result = $conn -> query($query);

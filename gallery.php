@@ -74,7 +74,7 @@ http://www.tooplate.com/view/2042-the-block
                             "varLabel" => "tegangan (V)",
                             "yLabel" => "Tegangan per Menit",
                             "xseries" => "waktu",
-                            "yseries" => "tegangan",
+                            "yseries" => "v1",
                             "tablename" => "merit", 
                             "date" => $date
                             );
@@ -92,7 +92,7 @@ http://www.tooplate.com/view/2042-the-block
                             "varLabel" => "Arus (mA)",
                             "yLabel" => "Arus per Menit",
                             "xseries" => "waktu",
-                            "yseries" => "arus",
+                            "yseries" => "i1",
                             "tablename" => "merit",
                             "date" => $date
                             );

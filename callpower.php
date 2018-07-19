@@ -5,8 +5,8 @@
     include 'dbmodel.php';
     
     function getDaya($date){
-        $tegangan = doQueryAsArray(generateQuery("tegangan","merit",$date),"tegangan");
-        $arus = doQueryAsArray(generateQuery("arus","merit",$date),"arus");
+        $tegangan = doQueryAsArray(generateQuery("v1","merit",$date),"v1");
+        $arus = doQueryAsArray(generateQuery("i1","merit",$date),"i1");
         
         for($i=0;$i<count($tegangan);$i++){
             $series[$i] = $tegangan[$i] * $arus[$i];

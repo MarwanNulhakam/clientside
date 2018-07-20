@@ -19,6 +19,7 @@ http://www.tooplate.com/view/2042-the-block
 	
 <?php
 	include 'powergauge.php';	
+        include 'callpower.php';
 ?>
 <div id="tooplate_wrapper">
 
@@ -48,14 +49,14 @@ http://www.tooplate.com/view/2042-the-block
             <div class="image_fl"><span></span>
                 <?php
 			echo '<p style="text-align:center;">Total Daya 1</p>';
-			displayGauge("gauge1",70.8);
+			displayGauge("gauge1",getTotalDayaHarian(1,"tanggal = '".(date("Y-m-d"))."'"));
 		?>	
             </div>
             
             <div class="image_fl"><span></span>
                 <?php
 			echo '<p style="text-align:center;">Total Daya 2</p>';
-			displayGauge("gauge2",70.8);
+			displayGauge("gauge2",getTotalDayaHarian(2,"tanggal = '".(date("Y-m-d"))."'"));
 		?>	
             </div>
         </div>

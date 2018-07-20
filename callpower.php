@@ -21,6 +21,14 @@
         
         return $series;
     }
+    function getTotalDayaHarian($x,$date){
+        $tot = 0;
+        $dx = getDaya($x,$date);
+        for($j=0;$j<count($dx);$j++){
+            $tot = $tot + $dx[$j];
+        }
+        return $tot/1000;
+    }
     
     function getTotalDayaBulanan($x,$bulan){
         $tot = 0;

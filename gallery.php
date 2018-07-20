@@ -71,10 +71,12 @@ http://www.tooplate.com/view/2042-the-block
                         $containername = "con1";
                         $chartprop = array(
                             "chartTitle" =>"Monitor Tegangan",
-                            "varLabel" => "tegangan (V)",
+                            "varLabel1" => "tegangan1 (V)",
+                            "varLabel2" => "tegangan2 (V)",
                             "yLabel" => "Tegangan per Menit",
                             "xseries" => "waktu",
-                            "yseries" => "v1",
+                            "yseries1" => "v1",
+                            "yseries2" => "v2",
                             "tablename" => "merit", 
                             "date" => $date
                             );
@@ -89,10 +91,12 @@ http://www.tooplate.com/view/2042-the-block
                         $containername = "con2";
                         $chartprop = array(
                             "chartTitle" =>"Monitor Arus",
-                            "varLabel" => "Arus (mA)",
+                            "varLabel1" => "Arus1 (mA)",
+                            "varLabel2" => "Arus2 (mA)",
                             "yLabel" => "Arus per Menit",
                             "xseries" => "waktu",
-                            "yseries" => "i1",
+                            "yseries1" => "i1",
+                            "yseries2" => "i2",
                             "tablename" => "merit",
                             "date" => $date
                             );

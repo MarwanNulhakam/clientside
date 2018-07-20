@@ -55,7 +55,8 @@ http://www.tooplate.com/view/2042-the-block
 				$containername = "con2";
 				$chartprop = array(
 					"chartTitle" =>"Monitor Daya",
-					"varLabel" => "Daya (watt)",
+					"varLabel1" => "Daya1 (watt)",
+                                        "varLabel2" => "Daya2 (watt)",
 					"yLabel" => "Daya per Menit",
 					"xseries" => "waktu",
 					"yseries" => "Daya",

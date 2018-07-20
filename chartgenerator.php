@@ -29,8 +29,12 @@
             },
         
             series: [{
-                name: '".$data["varLabel"]."',
-                data: ".$data["series"]."
+                name: '".$data["varLabel1"]."',
+                data: ".$data["series1"]."
+            },
+            {
+                name: '".$data["varLabel2"]."',
+                data: ".$data["series2"]."
             }],
         
             responsive: {

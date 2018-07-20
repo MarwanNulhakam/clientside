@@ -42,13 +42,23 @@ http://www.tooplate.com/view/2042-the-block
     
     <div id="tooplate_content"><span class="content_top"></span>
     	<h2>Objek Penelitian</h2>
-<div class="image_fr"><span></span>
-        <?php
-			echo '<p style="text-align:center;">Total Daya</p>';
-			displayGauge(70.8);
-		?>	
-        </div>
+        
         <p><em>Morbi congue lorem sit amet odio iaculis tincidunt. Donec nibh, molestie nec pellentesque non, in diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</em></p>	
+        <div style="padding-left: 60px;">
+            <div class="image_fl"><span></span>
+                <?php
+			echo '<p style="text-align:center;">Total Daya 1</p>';
+			displayGauge("gauge1",70.8);
+		?>	
+            </div>
+            
+            <div class="image_fl"><span></span>
+                <?php
+			echo '<p style="text-align:center;">Total Daya 2</p>';
+			displayGauge("gauge2",70.8);
+		?>	
+            </div>
+        </div>
         <p>Aliquam et augue et odio luctus posuere sit amet et nisi. Maecenas, est sit amet convallis consectetur, lacus ligula elementum lacus, ut fermentum elit sem et nisi. Duis eu elit tortor, sed condimentum nulla. Phasellus varius posuere adipiscing. Mauris sodales ullamcorper. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow"><strong>XHTML</strong></a> and <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow"><strong>CSS</strong></a>.</p>
         <div class="cleaner h40"></div>
 		

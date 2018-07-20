@@ -1,7 +1,7 @@
 <?php
-function displayGauge($value){
+function displayGauge($id,$value){
 echo '  <div style="width: 280px; height: 140px; margin: 0 auto; float: right">
-            <div id="container-speed" style="width: 290px; height: 140px; float: right"></div>
+            <div id="'.$id.'" style="width: 290px; height: 140px; float: right"></div>
         </div>
 ';
 echo '<script type="text/javascript">';
@@ -61,7 +61,7 @@ echo "
         };
         
         // The speed gauge
-        var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptions, {
+        var chartSpeed = Highcharts.chart('".$id."', Highcharts.merge(gaugeOptions, {
             yAxis: {
                 min: 0,
                 max: 200,

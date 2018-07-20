@@ -55,7 +55,8 @@ $(function() {
                 $containername = "con1";
                 $chartprop = array(
                     "chartTitle" =>"Akumulasi Daya Bulanan",
-                    "varLabel" => "Daya (VA)",
+                    "varLabel1" => "Daya1 (VA)",
+                    "varLabel2" => "Daya2 (VA)",
                     "yLabel" => "Total Daya",
                     "xseries" => "Bulan",
                     "yseries" => "daya",

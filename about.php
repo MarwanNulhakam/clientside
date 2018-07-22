@@ -20,6 +20,7 @@ http://www.tooplate.com/view/2042-the-block
 <?php
 	include 'powergauge.php';	
         include 'callpower.php';
+        $date = date("Y-m-d");
 ?>
 <div id="tooplate_wrapper">
 
@@ -45,18 +46,37 @@ http://www.tooplate.com/view/2042-the-block
     	<h2>Objek Penelitian</h2>
         
         <p><em>Morbi congue lorem sit amet odio iaculis tincidunt. Donec nibh, molestie nec pellentesque non, in diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</em></p>	
-        <div style="padding-left: 60px;">
+        <div style="padding-left: 120px;padding-top: 30px;">
             <div class="image_fl"><span></span>
                 <?php
-			echo '<p style="text-align:center;">Total Daya 1</p>';
-			displayGauge("gauge1",getTotalDayaHarian(1,"tanggal = '".(date("Y-m-d"))."'"));
+                    $v1 = getTegangan(1,"'tanggal = ".$date."'");
+                    $i1 = getArus(1,"'tanggal = ".$date."'");
+                    echo '<p style="text-align:left;">Tegangan Baterai 1: '.$v1[count($v1)-1].' V</p>';
+                    echo '<p style="text-align:left;">Kuat Arus Baterai 1: '.$i1[count($i1)-1].' A</p>';
+                ?>
+            </div>
+            <div class="image_fl" style="padding-left: 140px;"><span></span>
+                <?php
+                    $v2 = getTegangan(2,"'tanggal = ".$date."'");
+                    $i2 = getArus(2,"'tanggal = ".$date."'");
+                    echo '<p style="text-align:left;">Tegangan Baterai 2: '.$v2[count($v2)-1].' V</p>';
+                    echo '<p style="text-align:left;">Kuat Arus Baterai 2: '.$i2[count($i2)-1].' A</p>';
+                ?>
+            </div>
+        </div>
+
+        <div style="padding-left: 60px;padding-top: 80px;">
+            <div class="image_fl"><span></span>
+                <?php
+			echo '<p style="text-align:center;">Total Daya Baterai 1</p>';
+			displayGauge("gauge1",getTotalDayaHarian(1,"tanggal = '".($date)."'"));
 		?>	
             </div>
             
             <div class="image_fl"><span></span>
                 <?php
-			echo '<p style="text-align:center;">Total Daya 2</p>';
-			displayGauge("gauge2",getTotalDayaHarian(2,"tanggal = '".(date("Y-m-d"))."'"));
+			echo '<p style="text-align:center;">Total Daya Baterai 2</p>';
+			displayGauge("gauge2",getTotalDayaHarian(2,"tanggal = '".($date)."'"));
 		?>	
             </div>
         </div>

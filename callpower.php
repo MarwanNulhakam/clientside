@@ -4,16 +4,17 @@
     include 'actualgraphicgenerator.php';
     include 'dbmodel.php';
     
+    function getTegangan($x,$date){
+        $var1=$x==1?"v1":"v2";
+        return doQueryAsArray(generateQuery($var1,"merit",$date),$var1);
+    }
+    function getArus($x,$date){
+        $var1=$x==1?"i1":"i2";
+        return doQueryAsArray(generateQuery($var1,"merit",$date),$var1);
+    }
     function getDaya($x,$date){
-        if($x==1){
-            $var1="v1";
-            $var2="i1";
-        }else{
-            $var1="v2";
-            $var2="i2";
-        }
-        $tegangan = doQueryAsArray(generateQuery($var1,"merit",$date),$var1);
-        $arus = doQueryAsArray(generateQuery($var2,"merit",$date),$var2);
+        $tegangan = getTegangan($x,$date);
+        $arus = getArus($x,$date);
         
         for($i=0;$i<count($tegangan);$i++){
             $series[$i] = $tegangan[$i] * $arus[$i];

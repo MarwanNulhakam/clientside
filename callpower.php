@@ -100,6 +100,7 @@
         
         chartgenerator($container,
                     array(
+                        "chartType" => $chartproperties["chartType"],
                         "chartTitle" => $chartproperties["chartTitle"],
                         "varLabel1" => $chartproperties["varLabel1"],
                         "varLabel2" => $chartproperties["varLabel2"],

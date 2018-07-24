@@ -3,7 +3,17 @@
     echo '<script type="text/javascript">';
     echo "
         $(function () {
-            var chart = new Highcharts.chart('".$containername."', {    
+            var chart = new Highcharts.chart('".$containername."', {";
+
+    if(isset($data['chartType'])){
+        echo "
+            chart: {
+                type: 'column'
+            },  
+        ";
+    }
+
+    echo "  
             title: {
                 text: '".$data["chartTitle"]."'
             },

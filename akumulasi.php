@@ -32,14 +32,14 @@ $(function() {
 <div id="tooplate_wrapper">
 
 	<div id="tooplate_header">
-        <div id="site_title"><h1><a href="#">The Block</a></h1></div>
+        <div id="site_title"><h1></h1></div>
         <div id="tooplate_menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.php">Total Daya</a></li>
-                <li><a href="blog.php">Grafik Daya </a></li>
-                <li><a href="gallery.php">Grafik V/A</a></li>
-                <li><a href="contact.php" class="current">Akumulasi</a></li>
+                <li><a href="total_daya.php">Total Daya</a></li>
+                <li><a href="grafik_daya.php">Grafik Daya </a></li>
+                <li><a href="grafik_va.php">Grafik V/A</a></li>
+                <li><a href="akumulasi.php" class="current">Akumulasi</a></li>
             </ul>    	
         </div> <!-- end of tooplate_menu -->
     </div> <!-- end of forever header -->
